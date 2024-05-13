@@ -1,0 +1,261 @@
+ assignment 1-
+
+ 1)   CREATE TABLE Client_Master(
+    Client_no varchar(6),
+    Name varchar(20),
+    Address1 varchar(30),
+    Address2 varchar(30),
+    City varchar(15),
+    State varchar(15),
+    Pincode number(10,2),
+    Bal_Due integer
+)
+
+2)  	   Create table Product_Master(
+    Product_No varchar(6),
+    Description varchar(20),
+    Profit_Percentage Number(10,2),
+    Unit_Mesure varchar(10),
+    Qty_on_Hand Number(10,2),
+    Record_Lv1 number(10,2),
+    Sell_price integer,
+    Cost_price integer
+    )
+
+
+3)    Alter table Client_Master add DOB
+
+
+4)    Alter table Client_Master drop column DOB
+
+
+5)    alter table ProductMaster rename column Sell_price to SellPrice
+
+
+
+6)  alter TABLE Product_Master rename to ProductMaster
+  
+
+
+7)    a)   drop table Client_master
+      b)    drop table Product_master 
+
+
+
+Assignment 2-
+
+1)    INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES
+      ('C00001', 'Ivan Bayross', 'Mumbai', 400054, 'Maharashtra', 15000)
+
+  INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES   ('C00002', 'Mamta Mazumdar', 'Madras', 780001, 'Tamil Nadu', 0)
+     
+INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES    ('C00003', 'Chhaya Bankar', 'Mumbai', 400057, 'Maharashtra', 5000)
+
+ INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES   ('C00004', 'Ashwini Joshi', 'Bangalore', 560001, 'Karnataka', 0)
+
+INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES    ('C00005', 'Hansel Colaco', 'Mumbai', 400060, 'Maharashtra', 2000)
+
+INSERT INTO Client_Master (Client_no, Name, City, Pincode, State, BalDue) VALUES    ('C00006', 'Deepak Sharma', 'Mangalore', 560050, 'Karnataka', 0)
+
+
+
+2)  a)	select Name from  Client_Master 
+    b)	select * from Client_Master
+    c)	select Name, City, State from Client_Master
+    d)	SELECT City FROM Client_Master WHERE City = 'Mumbai'
+    e)	SELECT Name FROM Client_Master WHERE Bal_Due = 15000
+    f)	SELECT * FROM Client_Master WHERE Name LIKE 'M%'
+    g)	SELECT * FROM Client_Master WHERE State = 'Maharashtra' OR State = 'Karnataka'
+
+
+3)	a)	UPDATE Client_Master
+		SET City = 'Bangalore'
+		WHERE Client_no = 'C00005'
+
+	b)	UPDATE Client_Master
+		SET Bal_Due = 1000
+		WHERE Client_no = 'C00001'
+
+	c)	UPDATE Client_Master
+		SET City = 'Pune'
+
+
+4)  a)	DELETE FROM CLIENT_MASTER;
+     b) DELETE FROM CLIENT_MASTER WHERE State = 'Tamil Nadu';
+
+
+ASSIGNMENT 3
+
+1)		INSERT INTO Product_Master  VALUES('P00001', '1.44floppies', 5, 'Piece', 200, 50, 350, 250)
+		INSERT INTO Product_Master  VALUES('P03453', 'Monitors', 6, 'Piece', 150, 50, 500, 350)
+		INSERT INTO Product_Master  VALUES('P06734', 'Mouse', 5, 'Piece', 100, 20, 600, 450)
+		INSERT INTO Product_Master  VALUES('P07865', '1.22floppies', 5, 'Piece', 100, 20, 750, 500)
+		INSERT INTO Product_Master  VALUES('P07868', 'Keyboards', 2, 'Piece', 150, 50, 850, 550)
+		INSERT INTO Product_Master  VALUES('P07885', 'CDDrive', 2.5, 'Piece', 80, 30, 700, 450)
+		INSERT INTO Product_Master  VALUES('P07965', '540 HDD', 4, 'Piece', 100, 40, 350, 250)
+		INSERT INTO Product_Master  VALUES('P07975', '1.44Drive', 5, 'Piece', 70, 30, 300, 175)
+		INSERT INTO Product_Master  VALUES('P08865', '1.22Drive', 5, 'Piece', 75, 30, 450, 300)
+
+
+
+
+
+2)
+1.	SELECT client_name FROM client_master;
+
+
+2.	SELECT client_name, city FROM client_master;
+
+	
+3.	SELECT * FROM product_master;
+
+	
+4.	SELECT * FROM client_master WHERE city = 'Bombay';
+
+	
+5.	SELECT * FROM client_master WHERE client_no IN ('C00001', 'C00002');
+
+	
+6.	SELECT * FROM product_master WHERE description IN ('1.44 Drive', '1.22 Drive');
+
+	
+7.	SELECT * FROM product_master WHERE sell_price > 5000;
+
+	
+8.	SELECT * FROM client_master WHERE city IN ('Bombay', 'Delhi', 'Madras');
+
+	
+9.	SELECT * FROM product_master WHERE sell_price > 2000 AND sell_price <= 5000;
+
+	
+10.	SELECT client_name, city, state FROM client_master WHERE state != 'Maharashtra';
+
+	
+11.	UPDATE product_master SET sell_price = 1150 WHERE description = '1.44 floppy drive';
+	
+
+12.		DELETE FROM client_master WHERE client_no = '0001';
+
+
+13.		SELECT description, sell_price, sell_price * 15 AS new_sell_price FROM product_master WHERE sell_price > 1500;
+
+
+14.		SELECT * FROM client_master WHERE city LIKE '_a%';
+
+
+15.		SELECT client_name FROM client_master WHERE client_name LIKE '_a%';
+
+
+16.		SELECT * FROM product_master ORDER BY description;
+
+
+17.		SELECT COUNT(*) FROM product_master;
+
+	
+18.	SELECT COUNT(*) FROM product_master;
+
+
+19.		SELECT MIN(sell_price) FROM product_master;
+
+
+20.		SELECT MAX(sell_price) AS max_price, MIN(sell_price) AS min_price FROM product_master;
+
+
+21.	SELECT COUNT(*) FROM product_master WHERE sell_price >= 1500;
+
+
+22.	SELECT * FROM product_master ORDER BY sell_price ASC;
+
+
+23.	SELECT * FROM product_master ORDER BY sell_price DESC;
+
+
+
+
+
+	
+Assignment 4
+
+1)
+CREATE TABLE EMPLOYEE (
+    ID INT,
+    F_NAME VARCHAR(50),
+    L_NAME VARCHAR(50),
+    DEPT VARCHAR(50),
+    SALARY DECIMAL(10, 2),
+    DOJ DATE,
+    ADDRESS VARCHAR(100),
+    Married CHAR(1)
+);
+
+INSERT INTO EMPLOYEE (ID, F_NAME, L_NAME, DEPT, SALARY, DOJ, ADDRESS, Married) VALUES
+(1, 'VINAY', 'KUMAR', 'MCA', 25000, '2001-09-27', 'GHAZIABAD', 'Y'),
+(2, 'SUMAN', 'VERMA', 'MCA', 15000, '2006-10-17', 'MEERUT', 'Y'),
+(3, 'AKASH', 'SINGH', 'CS', 20000, '2005-01-15', 'KANPUR', 'Y'),
+(4, 'SAGAR', 'KUMAR', 'IT', 20000, '2019-02-12', 'GHAZIABAD', 'N'),
+(5, 'ROHAN', 'SHARMA', 'CS', 21000, '2005-09-18', 'GHAZIABAD', NULL),
+(6, 'ROBIN', 'SINGH', 'IT', 18000, '2021-10-22', 'MEERUT', 'N'),
+(7, 'AKASH', 'RANJAN', 'CS', 22000, '2019-11-14', 'GHAZIABAD', NULL);
+
+
+
+1	SELECT * FROM EMPLOYEE WHERE ADDRESS = 'GHAZIABAD';
+
+
+2	SELECT DISTINCT DEPT FROM EMPLOYEE;
+
+
+3	SELECT ID, CONCAT(F_NAME, ' ', L_NAME) AS Full_Name, DEPT FROM EMPLOYEE;
+
+
+4	SELECT CONCAT(F_NAME, ' is working in ', DEPT, ' Department') AS Employee_Details FROM EMPLOYEE;
+
+
+5	SELECT F_NAME, L_NAME FROM EMPLOYEE WHERE DOJ > '2005-01-15';
+
+
+6	UPDATE EMPLOYEE SET SALARY = 25000 WHERE ID = 2;
+
+
+7	SELECT ID, CONCAT(F_NAME, ' ', L_NAME) AS Name, SALARY * 12 AS 'Annual Salary' FROM EMPLOYEE;
+
+
+8	SELECT *, SALARY + 300 AS Gross_Salary FROM EMPLOYEE;
+
+
+9	SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 15000 AND 30000;
+
+
+10	SELECT * FROM EMPLOYEE WHERE DOJ BETWEEN '2001-09-27' AND '2019-02-12';
+
+
+11	SELECT * FROM EMPLOYEE WHERE DEPT IN ('MCA', 'CS');
+
+
+12	SELECT * FROM EMPLOYEE WHERE DEPT != 'MCA';
+
+
+13	SELECT * FROM EMPLOYEE WHERE F_NAME LIKE 'R%';
+
+
+14	SELECT * FROM EMPLOYEE WHERE F_NAME LIKE 'Ro%';
+
+
+15	SELECT * FROM EMPLOYEE WHERE F_NAME LIKE 'R____';
+
+
+16	SELECT * FROM EMPLOYEE WHERE F_NAME LIKE '_o%';
+
+
+17	SELECT * FROM EMPLOYEE WHERE Married = 'Y';
+
+
+18	SELECT * FROM EMPLOYEE WHERE Married = 'N';
+
+
+19	SELECT * FROM EMPLOYEE WHERE Married IS NULL;
+
+
+20	SELECT * FROM EMPLOYEE WHERE DEPT = 'MCA' AND Married = 'Y';
+
+
